@@ -1,3 +1,7 @@
+Using port 6006 # go/up 6006
+Using Standalone Mode
+   `rippled ledger_accept --conf=/etc/opt/ripple/rippled.cfg` # needed to advance Ledger for some features, but is not working atm
+
 # Rippled (node)
 
 This container allows you to run a `rippled` node. No config required.
