@@ -18,7 +18,7 @@ RUN apt-get update -y && \
     echo '#!/bin/bash' > /usr/bin/server_info && echo '/entrypoint.sh server_info' >> /usr/bin/server_info && \
     chmod +x /usr/bin/server_info
 
-RUN ln -s /opt/ripple/bin/rippled /usr/bin/rippled
+RUN ln -s "/opt/ripple/bin/rippled -a --start --conf=/usr/bin/rippled"
 
 EXPOSE 80 443 5005 6006 51235
 
