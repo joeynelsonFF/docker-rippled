@@ -1,6 +1,14 @@
-Using port 6006 # go/up 6006
-Using Standalone Mode
-   `rippled ledger_accept --conf=/etc/opt/ripple/rippled.cfg` # needed to advance Ledger for some features, but is not working atm
+go/up
+
+Issue commands with WebSocket API Tool: https://xrpl.org/websocket-api-tool.html
+Some other methods not shown ont he web socket tool list:
+- https://xrpl.org/wallet_propose.html # Creates a new account
+
+
+This is Configured to Run in Standalone Mode (https://xrpl.org/rippled-server-modes.html reasons-to-run-a-rippled-server-in-stand-alone-mode)
+-`rippled ledger_accept --conf=/etc/opt/ripple/rippled.cfg` # Manually advance ledger index
+-Address: rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh
+-Secret: snoPBrXtMeMyMHUVTgbuqAfg1SUTb ("masterpassphrase")
 
 # Rippled (node)
 
