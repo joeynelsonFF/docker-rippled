@@ -7,19 +7,29 @@ self(){
 
 $(self)/down
 
-PORT=80
+WSPORT=80
 
 CUSTOMPORT=$(echo $1|egrep "^[0-9]+$"|wc -l)
 
 if [[ "$CUSTOMPORT" -gt "0" ]]; then
-    PORT=$1
+    WSPORT=$1
 fi
 
+# note: port designations
+# 80     websocket public api
+# 5005   rpc public api
+# 6006   websocket admin api
+# 51235  peer
+
+# run container
 docker run \
     -dit \
     --name rippled \
-    -p $PORT:80 \
+    -p $WSPORT:80 \
+    -p 5005:5005 \
+    -p 6006:6006 \
+    -p 51235:51235 \
     -v $(self)/../config:/config/ \
-    rippled:latest
+    rippled:latest -a --start 
 
 docker logs -f rippled
